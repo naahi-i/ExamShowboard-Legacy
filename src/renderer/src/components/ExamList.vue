@@ -123,7 +123,7 @@ function getStatusColor(item: any): string {
   const startTime = new Date(item.start);
   const endTime = new Date(item.end);
   if (now < startTime-15) return 'orange';
-  else if (now <= startTime) return 'blue';
+  else if (now <= Date(start.getTime() - 15 * 60 * 1000)) return 'blue';
   else if (now >= startTime && now <= endTime) return 'green';
   else return 'red';
 }
